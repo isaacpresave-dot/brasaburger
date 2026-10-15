@@ -1,0 +1,1728 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Brasa Burger — hambúrgueres, combos, batatas fritas, milk-shakes e bebidas. Confira nosso cardápio!">
+  <title>Brasa Burger | Sabor que marca</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #101010;
+      --panel: #191919;
+      --panel-light: #222222;
+      --yellow: #ffd02f;
+      --white: #ffffff;
+      --muted: #a5a5a5;
+      --border: rgba(255,255,255,.10);
+      --radius: 17px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button, a, select {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1160px, 91%);
+      margin-inline: auto;
+    }
+
+    .announcement {
+      background: var(--yellow);
+      color: #111;
+      padding: 8px 12px;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(16,16,16,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .brand-symbol {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--yellow);
+      color: #111;
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .brand-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand-title span {
+      color: var(--yellow);
+    }
+
+    .brand-subtitle {
+      margin-top: 5px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      font-size: 12px;
+      color: #d4d4d4;
+    }
+
+    .nav-links a {
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--yellow);
+    }
+
+    .cart-trigger {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--yellow);
+      color: #111;
+      border: 0;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .cart-trigger:hover,
+    .primary-button:hover {
+      background: #ffe16e;
+      transform: translateY(-1px);
+    }
+
+    .cart-count {
+      min-width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      padding: 0 5px;
+      border-radius: 50px;
+      background: #111;
+      color: var(--yellow);
+      font-size: 11px;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 74px 0 78px;
+      background:
+        radial-gradient(ellipse at 83% 45%, rgba(255,208,47,.13), transparent 39%),
+        linear-gradient(110deg, #101010 40%, #17150e 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--yellow);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 2px;
+      background: var(--yellow);
+    }
+
+    .hero h1 {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(50px, 6.4vw, 80px);
+      font-weight: 700;
+      line-height: .98;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero-copy {
+      max-width: 465px;
+      margin-top: 22px;
+      color: #b9b9b9;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 29px;
+    }
+
+    .primary-button,
+    .secondary-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .primary-button {
+      background: var(--yellow);
+      color: #111;
+      border: 0;
+    }
+
+    .secondary-button {
+      border: 1px solid #414141;
+      color: white;
+      background: transparent;
+    }
+
+    .secondary-button:hover {
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    .hero-caption {
+      margin-top: 24px;
+      font-size: 10px;
+      color: #858585;
+    }
+
+    .hero-art {
+      min-height: 385px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .hero-image-frame {
+      width: min(100%, 490px);
+      aspect-ratio: 1 / .87;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #272116;
+      box-shadow: 0 30px 80px #0006;
+      transform: rotate(2deg);
+      border: 1px solid #ffffff10;
+    }
+
+    .hero-image-frame img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .hero-image-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-label {
+      position: absolute;
+      left: -3px;
+      bottom: 16px;
+      background: var(--yellow);
+      color: #111;
+      border-radius: 10px;
+      padding: 12px 17px;
+      transform: rotate(-3deg);
+      box-shadow: 0 10px 35px #0005;
+    }
+
+    .hero-label small {
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-label strong {
+      font-family: "Oswald", sans-serif;
+      font-size: 24px;
+    }
+
+    .hero-seal {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      width: 83px;
+      height: 83px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border: 1px solid #69604a;
+      border-radius: 50%;
+      background: #101010d9;
+      color: var(--yellow);
+      font-size: 9px;
+      line-height: 1.7;
+      font-weight: 800;
+      transform: rotate(9deg);
+    }
+
+    /* FAIXA DE DESTAQUES */
+
+    .features {
+      background: #151515;
+      border-block: 1px solid var(--border);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 23px 10px;
+      border-right: 1px solid var(--border);
+    }
+
+    .feature:last-child {
+      border-right: 0;
+    }
+
+    .feature-icon {
+      font-size: 24px;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .feature span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* CARDÁPIO */
+
+    .menu-section {
+      padding: 83px 0 90px;
+    }
+
+    .section-heading {
+      max-width: 630px;
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      justify-content: center;
+    }
+
+    .section-heading h2,
+    .promo h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(35px, 4.3vw, 49px);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 span,
+    .promo h2 span {
+      color: var(--yellow);
+    }
+
+    .section-heading p {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .category-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 33px;
+    }
+
+    .category-button {
+      padding: 10px 17px;
+      border: 1px solid #333;
+      border-radius: 50px;
+      background: transparent;
+      color: #c9c9c9;
+      font-size: 11px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .category-button:hover,
+    .category-button.active {
+      background: var(--yellow);
+      border-color: var(--yellow);
+      color: #111;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      min-width: 0;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color .25s, transform .25s;
+      animation: fadeIn .3s ease both;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: #ffd02f77;
+    }
+
+    .product-photo {
+      height: 218px;
+      position: relative;
+      overflow: hidden;
+      background: #29251b;
+    }
+
+    .product-photo img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s;
+    }
+
+    .product-card:hover .product-photo img {
+      transform: scale(1.06);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 6px 9px;
+      background: var(--yellow);
+      color: #111;
+      border-radius: 5px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .product-content {
+      padding: 18px;
+    }
+
+    .product-content h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .product-description {
+      min-height: 37px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 9px;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      color: var(--yellow);
+      font-size: 18px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .product-price small {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .add-button {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 0;
+      border-radius: 10px;
+      background: var(--yellow);
+      color: #111;
+      font-size: 24px;
+      transition: .2s;
+    }
+
+    .add-button:hover {
+      background: #ffe16e;
+      transform: scale(1.05);
+    }
+
+    .product-options {
+      display: grid;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .product-options label {
+      color: #c4c4c4;
+      font-size: 10px;
+    }
+
+    .product-options select {
+      width: 100%;
+      min-width: 0;
+      padding: 10px;
+      background: #111;
+      color: white;
+      border: 1px solid #373737;
+      border-radius: 8px;
+      font-size: 11px;
+      outline: none;
+    }
+
+    .product-options select:focus {
+      border-color: var(--yellow);
+    }
+
+    /* CHAMADA FINAL */
+
+    .promo {
+      padding: 0 0 85px;
+    }
+
+    .promo-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 39px 43px;
+      border: 1px solid #343434;
+      border-radius: 21px;
+      background:
+        radial-gradient(ellipse at 90% 50%, #ffd02f20, transparent 45%),
+        #191919;
+    }
+
+    .promo p {
+      max-width: 540px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      background: #0b0b0b;
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-info {
+      color: var(--muted);
+      text-align: right;
+      font-size: 10px;
+      line-height: 1.9;
+    }
+
+    /* CARRINHO LATERAL */
+
+    .overlay {
+      position: fixed;
+      z-index: 49;
+      inset: 0;
+      background: #000b;
+      opacity: 0;
+      visibility: hidden;
+      transition: .25s;
+    }
+
+    .overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      width: min(440px, 100%);
+      height: 100dvh;
+      padding: 23px;
+      background: #171717;
+      border-left: 1px solid #333;
+      transform: translateX(100%);
+      transition: transform .3s ease;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-header h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: 27px;
+      text-transform: uppercase;
+    }
+
+    .close-cart {
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 9px;
+      background: #292929;
+      color: white;
+      font-size: 24px;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px 0;
+    }
+
+    .empty-cart {
+      padding: 55px 12px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cart-item h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      text-transform: none;
+    }
+
+    .cart-item p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .cart-item-price {
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .cart-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 9px;
+    }
+
+    .cart-controls button {
+      width: 25px;
+      height: 25px;
+      border: 0;
+      border-radius: 5px;
+      background: #303030;
+      color: white;
+    }
+
+    .cart-controls .remove {
+      width: auto;
+      padding: 0 7px;
+      color: #ff9c9c;
+      font-size: 10px;
+    }
+
+    .cart-footer {
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .cart-total strong {
+      color: var(--yellow);
+      font-size: 24px;
+    }
+
+    .checkout-button {
+      width: 100%;
+      padding: 15px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--yellow);
+      color: #111;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .checkout-button:hover {
+      background: #ffe16e;
+    }
+
+    .checkout-note {
+      margin-top: 10px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 80;
+      bottom: 23px;
+      left: 50%;
+      width: max-content;
+      max-width: 90%;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: var(--yellow);
+      color: #111;
+      box-shadow: 0 10px 35px #0006;
+      font-size: 11px;
+      font-weight: 800;
+      text-align: center;
+      transform: translate(-50%, 15px);
+      opacity: 0;
+      visibility: hidden;
+      transition: .2s;
+    }
+
+    .toast.show {
+      transform: translate(-50%, 0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(9px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        padding: 54px 0;
+      }
+
+      .hero-grid {
+        gap: 18px;
+      }
+
+      .hero-art {
+        min-height: 300px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .product-photo {
+        height: 205px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .announcement {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .navbar {
+        height: 66px;
+        gap: 8px;
+      }
+
+      .brand-symbol {
+        width: 36px;
+        height: 36px;
+        font-size: 21px;
+      }
+
+      .brand-title {
+        font-size: 20px;
+      }
+
+      .brand-subtitle {
+        font-size: 7px;
+        letter-spacing: 1.5px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .cart-trigger {
+        gap: 5px;
+        padding: 9px 10px;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 43px 0 45px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: clamp(49px, 12.8vw, 67px);
+      }
+
+      .hero-copy {
+        font-size: 12px;
+        margin-top: 17px;
+      }
+
+      .hero-actions {
+        margin-top: 22px;
+      }
+
+      .hero-art {
+        min-height: 260px;
+        margin-top: 5px;
+      }
+
+      .hero-image-frame {
+        width: 94%;
+      }
+
+      .hero-seal {
+        width: 68px;
+        height: 68px;
+        font-size: 8px;
+      }
+
+      .hero-label {
+        left: 0;
+        bottom: 8px;
+        padding: 9px 12px;
+      }
+
+      .hero-label strong {
+        font-size: 20px;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .feature {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+        padding: 17px 3px;
+      }
+
+      .feature-icon {
+        font-size: 20px;
+      }
+
+      .feature strong {
+        font-size: 9px;
+      }
+
+      .feature span {
+        font-size: 8px;
+      }
+
+      .menu-section {
+        padding: 60px 0;
+      }
+
+      .section-heading p {
+        font-size: 11px;
+      }
+
+      .category-list {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 7px;
+        margin-bottom: 23px;
+      }
+
+      .category-button {
+        white-space: nowrap;
+        padding: 10px 13px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .product-card {
+        display: grid;
+        grid-template-columns: 37% minmax(0, 1fr);
+      }
+
+      .product-photo {
+        height: 100%;
+        min-height: 180px;
+      }
+
+      .product-content {
+        padding: 13px 11px;
+        min-width: 0;
+      }
+
+      .product-content h3 {
+        font-size: 18px;
+      }
+
+      .product-description {
+        min-height: 0;
+        margin-top: 6px;
+        font-size: 10px;
+      }
+
+      .product-bottom {
+        margin-top: 10px;
+      }
+
+      .product-price {
+        font-size: 15px;
+      }
+
+      .add-button {
+        width: 34px;
+        height: 34px;
+      }
+
+      .product-badge {
+        top: 7px;
+        left: 7px;
+        padding: 5px 6px;
+        font-size: 7px;
+      }
+
+      .product-options {
+        margin-top: 8px;
+        gap: 4px;
+      }
+
+      .product-options select {
+        padding: 8px 6px;
+        font-size: 10px;
+      }
+
+      .promo {
+        padding-bottom: 58px;
+      }
+
+      .promo-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 27px 21px;
+      }
+
+      .promo h2 {
+        font-size: 34px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-info {
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    BRASA BURGER · UMA NOVA EXPERIÊNCIA A CADA PEDIDO
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#inicio" aria-label="Brasa Burger - início">
+        <div class="brand-symbol" aria-hidden="true">B.</div>
+        <div>
+          <div class="brand-title">Brasa <span>Burger</span></div>
+          <div class="brand-subtitle">Sabor que marca</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação">
+        <a href="#inicio">Início</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#sobre">Sobre nós</a>
+      </nav>
+
+      <button class="cart-trigger" id="openCart" type="button">
+        Meu pedido
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Bem-vindo à Brasa</div>
+          <h1>Acenda sua<br>fome. <span>Sinta o sabor.</span></h1>
+
+          <p class="hero-copy">
+            Hambúrgueres para quem leva sabor a sério. Complete a experiência
+            com batatas crocantes, combos e milk-shakes.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-button" href="#cardapio">
+              Explorar cardápio <span>↗</span>
+            </a>
+            <a class="secondary-button" href="#sobre">Nossa história</a>
+          </div>
+
+          <p class="hero-caption">
+            SUA FOME ESCOLHE. A BRASA COMPLETA.
+          </p>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-image-frame">
+            <img
+              src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85"
+              alt="Hambúrguer com queijo, alface e tomate"
+              fetchpriority="high"
+            >
+          </div>
+
+          <div class="hero-label">
+            <small>Seu momento merece</small>
+            <strong>MAIS SABOR.</strong>
+          </div>
+
+          <div class="hero-seal">
+            SABOR<br>QUE<br>MARCA
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Categorias da Brasa Burger">
+      <div class="container features-grid">
+        <div class="feature">
+          <span class="feature-icon" aria-hidden="true">🍔</span>
+          <div>
+            <strong>Hambúrgueres</strong>
+            <span>Clássicos e duplos</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon" aria-hidden="true">🍟</span>
+          <div>
+            <strong>Combos & batatas</strong>
+            <span>Para completar o pedido</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon" aria-hidden="true">🥤</span>
+          <div>
+            <strong>Bebidas & shakes</strong>
+            <span>Um toque refrescante</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Encontre seu favorito</div>
+          <h2>O cardápio <span>Brasa</span></h2>
+          <p>
+            Escolha o que combina com sua fome. Selecione tamanhos e sabores,
+            adicione os produtos e confira seu pedido.
+          </p>
+        </div>
+
+        <div class="category-list" aria-label="Filtrar cardápio">
+          <button class="category-button active" data-category="todos">Todos</button>
+          <button class="category-button" data-category="hamburgueres">Hambúrgueres</button>
+          <button class="category-button" data-category="combos">Combos</button>
+          <button class="category-button" data-category="acompanhamentos">Batatas</button>
+          <button class="category-button" data-category="milkshakes">Milk-shakes</button>
+          <button class="category-button" data-category="bebidas">Bebidas</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="promo" id="sobre">
+      <div class="container">
+        <div class="promo-inner">
+          <div>
+            <div class="eyebrow">A sua próxima escolha</div>
+            <h2>Mais sabor.<br><span>Menos complicação.</span></h2>
+            <p>
+              Monte seu pedido pelo cardápio digital e confira tudo no carrinho
+              antes de finalizar.
+            </p>
+          </div>
+
+          <a href="#cardapio" class="primary-button">
+            Fazer meu pedido <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <a class="brand" href="#inicio">
+        <div class="brand-symbol" aria-hidden="true">B.</div>
+        <div>
+          <div class="brand-title">Brasa <span>Burger</span></div>
+          <div class="brand-subtitle">Sabor que marca</div>
+        </div>
+      </a>
+
+      <div class="footer-info">
+        <p>Brasa Burger © <span id="year"></span></p>
+        <p>Feito para quem ama hambúrguer.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRINHO -->
+  <div class="overlay" id="cartOverlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Seu pedido</h2>
+      <button class="close-cart" id="closeCart" type="button" aria-label="Fechar carrinho">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total dos produtos</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+
+      <button class="checkout-button" id="checkoutButton" type="button">
+        Finalizar pelo WhatsApp
+      </button>
+
+      <p class="checkout-note">
+        A entrega, as taxas e a disponibilidade devem ser confirmadas com a hamburgueria.
+      </p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    /*
+      CONFIGURAÇÃO DO WHATSAPP
+
+      Preencha com o número comercial da Brasa Burger:
+      código do país + DDD + número, somente dígitos.
+
+      Exemplo de formato: 5511999999999
+
+      Deixe vazio até ter autorização para usar o número correto.
+    */
+    const WHATSAPP_NUMBER = "";
+
+    /*
+      CATÁLOGO
+      Confira os dados com a hamburgueria antes de publicar.
+      Os valores e informações são usados como conteúdo de demonstração.
+    */
+    const products = [
+      {
+        id: "classic",
+        name: "Brasa Classic",
+        category: "hamburgueres",
+        description: "O clássico para qualquer ocasião.",
+        price: 22.90,
+        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+        badge: "Classic"
+      },
+      {
+        id: "bacon",
+        name: "Brasa Bacon",
+        category: "hamburgueres",
+        description: "Uma opção cheia de personalidade.",
+        price: 27.90,
+        image: "https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=800&q=80",
+        badge: "Bacon"
+      },
+      {
+        id: "duplo",
+        name: "Duplo Brasa",
+        category: "hamburgueres",
+        description: "Para quem quer uma experiência maior.",
+        price: 32.90,
+        image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80",
+        badge: "Duplo"
+      },
+      {
+        id: "duplo-bacon",
+        name: "Duplo Brasa Bacon",
+        category: "hamburgueres",
+        description: "Uma combinação dupla para uma fome grande.",
+        price: 37.90,
+        image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80",
+        badge: "Especial"
+      },
+      {
+        id: "batata",
+        name: "Batata frita",
+        category: "acompanhamentos",
+        description: "Escolha o tamanho para acompanhar seu lanche.",
+        options: [
+          { label: "Pequena (P)", price: 8.00 },
+          { label: "Média (M)", price: 12.00 },
+          { label: "Grande (G)", price: 15.00 }
+        ],
+        image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80",
+        badge: "Acompanhamento"
+      },
+      {
+        id: "combo-classic",
+        name: "Combo Brasa Classic",
+        category: "combos",
+        description: "A versão combo do nosso hambúrguer clássico.",
+        price: 32.90,
+        image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+        badge: "Combo"
+      },
+      {
+        id: "combo-bacon",
+        name: "Combo Brasa Bacon",
+        category: "combos",
+        description: "Uma opção para quem ama bacon.",
+        price: 37.90,
+        image: "https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=800&q=80",
+        badge: "Combo"
+      },
+      {
+        id: "combo-duplo",
+        name: "Combo Duplo Brasa",
+        category: "combos",
+        description: "O Duplo Brasa em versão combo.",
+        price: 40.90,
+        image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80",
+        badge: "Combo"
+      },
+      {
+        id: "combo-duplo-bacon",
+        name: "Combo Duplo Brasa Bacon",
+        category: "combos",
+        description: "Uma opção dupla para uma fome de respeito.",
+        price: 43.90,
+        image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80",
+        badge: "Combo"
+      },
+      {
+        id: "milkshake",
+        name: "Milk-shake",
+        category: "milkshakes",
+        description: "Escolha seu sabor e tamanho favorito.",
+        options: [
+          { label: "Médio (M)", price: 14.90 },
+          { label: "Grande (G)", price: 18.90 }
+        ],
+        flavors: ["Chocolate", "Morango", "Creme", "Doce de Leite"],
+        image: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80",
+        badge: "Cremoso"
+      },
+      {
+        id: "agua",
+        name: "Água 350 ml",
+        category: "bebidas",
+        description: "Água para acompanhar seu pedido.",
+        price: 3.99,
+        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=800&q=80",
+        badge: "Bebida"
+      },
+      {
+        id: "refri-lata",
+        name: "Refrigerante lata",
+        category: "bebidas",
+        description: "Refrigerante em lata. Consulte os sabores disponíveis.",
+        price: 6.99,
+        image: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?auto=format&fit=crop&w=800&q=80",
+        badge: "Bebida"
+      },
+      {
+        id: "refri-600",
+        name: "Refrigerante 600 ml",
+        category: "bebidas",
+        description: "Refrigerante para acompanhar seu lanche.",
+        price: 8.99,
+        image: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=80",
+        badge: "Bebida"
+      }
+    ];
+
+    let cart = [];
+    let activeCategory = "todos";
+
+    const productGrid = document.getElementById("productGrid");
+    const cartDrawer = document.getElementById("cartDrawer");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+    const toast = document.getElementById("toast");
+
+    function money(value) {
+      return value.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+    }
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      })[char]);
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(showToast.timer);
+
+      showToast.timer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2600);
+    }
+
+    function renderProducts() {
+      const filtered = activeCategory === "todos"
+        ? products
+        : products.filter(product => product.category === activeCategory);
+
+      productGrid.innerHTML = filtered.map(product => {
+        const lowestPrice = product.options
+          ? Math.min(...product.options.map(option => option.price))
+          : product.price;
+
+        const priceHTML = product.options
+          ? `<small>A partir de</small>${money(lowestPrice)}`
+          : `<small>Preço</small>${money(product.price)}`;
+
+        let optionsHTML = "";
+
+        if (product.options) {
+          optionsHTML += `
+            <div class="product-options">
+              <label for="size-${product.id}">Escolha o tamanho</label>
+              <select id="size-${product.id}" aria-label="Tamanho de ${escapeHTML(product.name)}">
+                ${product.options.map((option, index) => `
+                  <option value="${index}">
+                    ${escapeHTML(option.label)} — ${money(option.price)}
+                  </option>
+                `).join("")}
+              </select>
+            </div>
+          `;
+        }
+
+        if (product.flavors) {
+          optionsHTML += `
+            <div class="product-options">
+              <label for="flavor-${product.id}">Escolha o sabor</label>
+              <select id="flavor-${product.id}" aria-label="Sabor do milk-shake">
+                ${product.flavors.map(flavor => `
+                  <option value="${escapeHTML(flavor)}">${escapeHTML(flavor)}</option>
+                `).join("")}
+              </select>
+            </div>
+          `;
+        }
+
+        return `
+          <article class="product-card">
+            <div class="product-photo">
+              <img
+                src="${product.image}"
+                alt="${escapeHTML(product.name)}"
+                loading="lazy"
+                onerror="this.style.opacity='.0'; this.parentElement.style.background='#29251b'"
+              >
+              <span class="product-badge">${escapeHTML(product.badge)}</span>
+            </div>
+
+            <div class="product-content">
+              <h3>${escapeHTML(product.name)}</h3>
+              <p class="product-description">${escapeHTML(product.description)}</p>
+
+              ${optionsHTML}
+
+              <div class="product-bottom">
+                <div class="product-price">${priceHTML}</div>
+                <button
+                  class="add-button"
+                  type="button"
+                  data-add="${product.id}"
+                  aria-label="Adicionar ${escapeHTML(product.name)} ao pedido"
+                >+</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    document.querySelectorAll(".category-button").forEach(button => {
+      button.addEventListener("click", () => {
+        activeCategory = button.dataset.category;
+
+        document.querySelectorAll(".category-button").forEach(item => {
+          item.classList.toggle("active", item === button);
+        });
+
+        renderProducts();
+      });
+    });
+
+    productGrid.addEventListener("click", event => {
+      const button = event.target.closest("[data-add]");
+      if (!button) return;
+
+      const product = products.find(item => item.id === button.dataset.add);
+      if (!product) return;
+
+      let price = product.price;
+      let variant = "";
+
+      if (product.options) {
+        const sizeSelect = document.getElementById(`size-${product.id}`);
+        const selected = product.options[Number(sizeSelect.value)];
+
+        price = selected.price;
+        variant = selected.label;
+      }
+
+      if (product.flavors) {
+        const flavorSelect = document.getElementById(`flavor-${product.id}`);
+        variant += (variant ? " · " : "") + flavorSelect.value;
+      }
+
+      addToCart(product, price, variant);
+    });
+
+    function addToCart(product, price, variant) {
+      const key = `${product.id}|${variant}`;
+      const existing = cart.find(item => item.key === key);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({
+          key,
+          id: product.id,
+          name: product.name,
+          price,
+          variant,
+          quantity: 1
+        });
+      }
+
+      renderCart();
+      showToast(`${product.name} adicionado ao pedido.`);
+    }
+
+    function renderCart() {
+      const quantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      cartCount.textContent = quantity;
+      cartTotal.textContent = money(total);
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="empty-cart">
+            Seu carrinho está vazio.<br>
+            Escolha algo gostoso no cardápio!
+          </div>
+        `;
+        return;
+      }
+
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div>
+            <h3>${escapeHTML(item.name)}</h3>
+            <p>
+              ${item.variant ? escapeHTML(item.variant) + "<br>" : ""}
+              ${money(item.price)} por unidade
+            </p>
+            <div class="cart-controls">
+              <button type="button" data-action="decrease" data-key="${escapeHTML(item.key)}" aria-label="Diminuir quantidade">−</button>
+              <span>${item.quantity}</span>
+              <button type="button" data-action="increase" data-key="${escapeHTML(item.key)}" aria-label="Aumentar quantidade">+</button>
+              <button class="remove" type="button" data-action="remove" data-key="${escapeHTML(item.key)}">Remover</button>
+            </div>
+          </div>
+          <div class="cart-item-price">${money(item.price * item.quantity)}</div>
+        </div>
+      `).join("");
+    }
+
+    cartItems.addEventListener("click", event => {
+      const button = event.target.closest("[data-action]");
+      if (!button) return;
+
+      const item = cart.find(entry => entry.key === button.dataset.key);
+      if (!item) return;
+
+      if (button.dataset.action === "increase") {
+        item.quantity += 1;
+      } else if (button.dataset.action === "decrease") {
+        item.quantity -= 1;
+        if (item.quantity <= 0) {
+          cart = cart.filter(entry => entry.key !== item.key);
+        }
+      } else if (button.dataset.action === "remove") {
+        cart = cart.filter(entry => entry.key !== item.key);
+      }
+
+      renderCart();
+    });
+
+    function openCart() {
+      cartDrawer.classList.add("open");
+      cartOverlay.classList.add("open");
+      cartDrawer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove("open");
+      cartOverlay.classList.remove("open");
+      cartDrawer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("no-scroll");
+    }
+
+    document.getElementById("openCart").addEventListener("click", openCart);
+    document.getElementById("closeCart").addEventListener("click", closeCart);
+    cartOverlay.addEventListener("click", closeCart);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeCart();
+    });
+
+    document.getElementById("checkoutButton").addEventListener("click", () => {
+      if (cart.length === 0) {
+        showToast("Adicione algum produto antes de finalizar.");
+        return;
+      }
+
+      if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
+        showToast("Configure o número comercial no código para ativar o WhatsApp.");
+        return;
+      }
+
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      const lines = cart.map(item => {
+        const variant = item.variant ? ` (${item.variant})` : "";
+        return `${item.quantity}x ${item.name}${variant} — ${money(item.price * item.quantity)}`;
+      });
+
+      const message = [
+        "Olá! Gostaria de fazer este pedido na Brasa Burger:",
+        "",
+        ...lines,
+        "",
+        `Total dos produtos: ${money(total)}`,
+        "",
+        "Por favor, confirmem a disponibilidade, a entrega e possíveis taxas."
+      ].join("\n");
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
